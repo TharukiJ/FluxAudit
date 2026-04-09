@@ -10,3 +10,19 @@ In the modern digital landscape, businesses lose significant revenue due to "inv
 * **Opportunity Projection:** A neon-glowing line chart mapping current revenue stagnation against potential growth after fixing content gaps.
 * **Current vs. Recommended Mockup:** A side-by-side visual comparison of poor content vs. optimized, high-conversion posts.
 * **Antigravity UI:** Modern glassmorphism design featuring floating components for a premium, futuristic user experience.
+## Target Users
+* **Freelance Marketers:** For professional presentation of audit findings to close high-ticket clients.
+* **Small Business Owners:** To visualize digital weaknesses without navigating complex data reports.
+* **Agency Teams:** To use as a diagnostic tool during discovery calls and client onboarding.
+
+## Technology Stack
+* **Framework:** SvelteKit 5
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS 
+* **Animations:** GSAP (Antigravity effects)
+* **Icons:** Lucide-Svelte
+
+## Developer Strategy & Future Roadmap
+I have intentionally designed this version as a **Manual Audit** tool. By manually analyzing data points—checking Bio links, response times, and content quality—the marketer gains a deep, "human-first" understanding of consumer psychology and brand positioning that automated tools often miss.
+
+**Roadmap:** While the current focus is on manual expertise, I plan to integrate **Python** and **AI** logic in future iterations. This will allow users to input a URL and receive an automated audit by scraping social signals and website metadata to generate scores instantly.
