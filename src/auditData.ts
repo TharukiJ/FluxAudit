@@ -104,5 +104,16 @@ export const auditData = {
       item: "Location tagging consistency",
       status: "Pass"
     }
-  ]
+  ],
+  postMockup: {
+    hook: {
+      highlight: "3 SECRETS",
+      subtext: "TO PERFECT COFFEE"
+    },
+    tooltips: [
+      { title: "Hook-driven Headline", description: "Increases watch time by 40%" },
+      { title: "High-Contrast Visual", description: "Stops the scroll instantly" },
+      { title: "Brand-Aligned Colors", description: "Builds visual recognition" }
+    ]
+  }
 };

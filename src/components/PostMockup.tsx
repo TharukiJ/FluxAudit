@@ -4,7 +4,18 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Image as ImageIcon, Sparkles, AlertTriangle, ArrowRight } from "lucide-react";
 
-export default function PostMockup() {
+type PostMockupData = {
+  hook: {
+    highlight: string;
+    subtext: string;
+  };
+  tooltips: {
+    title: string;
+    description: string;
+  }[];
+};
+
+export default function PostMockup({ data }: { data: PostMockupData }) {
   const [isHoveringRecommended, setIsHoveringRecommended] = useState(false);
 
   return (
@@ -81,35 +92,22 @@ export default function PostMockup() {
             {/* Annotations (Tooltips) */}
             {isHoveringRecommended && (
               <>
-                {/* Tooltip 1 */}
-                <motion.div 
-                  initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }}
-                  className="absolute top-[20%] -right-[110%] sm:-right-[130%] min-w-[140px] sm:min-w-[160px] p-2.5 sm:p-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl shadow-lg z-30"
-                >
-                  <div className="text-[11px] sm:text-xs font-bold text-white mb-1.5 leading-tight">Hook-driven Headline</div>
-                  <div className="text-[9px] sm:text-[10px] text-gray-300 leading-snug">Increases watch time by 40%</div>
-                  <div className="absolute top-1/2 right-[100%] w-4 sm:w-6 h-[1px] bg-white/30"></div>
-                </motion.div>
-                
-                {/* Tooltip 2 */}
-                <motion.div 
-                  initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}
-                  className="absolute top-[50%] -right-[110%] sm:-right-[130%] min-w-[140px] sm:min-w-[160px] p-2.5 sm:p-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl shadow-lg z-30"
-                >
-                  <div className="text-[11px] sm:text-xs font-bold text-white mb-1.5 leading-tight">High-Contrast Visual</div>
-                  <div className="text-[9px] sm:text-[10px] text-gray-300 leading-snug">Stops the scroll instantly</div>
-                  <div className="absolute top-1/2 right-[100%] w-4 sm:w-6 h-[1px] bg-white/30"></div>
-                </motion.div>
-
-                {/* Tooltip 3 */}
-                <motion.div 
-                  initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}
-                  className="absolute top-[80%] -right-[110%] sm:-right-[130%] min-w-[140px] sm:min-w-[160px] p-2.5 sm:p-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl shadow-lg z-30"
-                >
-                  <div className="text-[11px] sm:text-xs font-bold text-white mb-1.5 leading-tight">Brand-Aligned Colors</div>
-                  <div className="text-[9px] sm:text-[10px] text-gray-300 leading-snug">Builds visual recognition</div>
-                  <div className="absolute top-1/2 right-[100%] w-4 sm:w-6 h-[1px] bg-white/30"></div>
-                </motion.div>
+                {data.tooltips.map((tooltip, index) => {
+                  const topPositions = ["top-[20%]", "top-[50%]", "top-[80%]"];
+                  return (
+                    <motion.div 
+                      key={index}
+                      initial={{ opacity: 0, x: -10 }} 
+                      animate={{ opacity: 1, x: 0 }} 
+                      transition={{ delay: index * 0.1 }}
+                      className={`absolute ${topPositions[index] || "top-[50%]"} -right-[110%] sm:-right-[130%] min-w-[140px] sm:min-w-[160px] p-2.5 sm:p-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl shadow-lg z-30`}
+                    >
+                      <div className="text-[11px] sm:text-xs font-bold text-white mb-1.5 leading-tight">{tooltip.title}</div>
+                      <div className="text-[9px] sm:text-[10px] text-gray-300 leading-snug">{tooltip.description}</div>
+                      <div className="absolute top-1/2 right-[100%] w-4 sm:w-6 h-[1px] bg-white/30"></div>
+                    </motion.div>
+                  );
+                })}
               </>
             )}
 
@@ -130,8 +128,8 @@ export default function PostMockup() {
               <div className="flex flex-col items-center justify-center h-full px-4 relative z-10 w-full">
                 {/* The Hook overlay */}
                 <div className="text-white font-mono font-black text-center text-[12px] sm:text-sm tracking-tighter leading-snug uppercase mb-16 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] flex flex-col items-center">
-                  <span className="bg-cyan-500 text-black px-2 py-0.5 mb-1 rounded-sm">3 SECRETS</span>
-                  <span>TO PERFECT COFFEE</span>
+                  <span className="bg-cyan-500 text-black px-2 py-0.5 mb-1 rounded-sm">{data.hook.highlight}</span>
+                  <span>{data.hook.subtext}</span>
                 </div>
               </div>
 
