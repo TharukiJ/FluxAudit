@@ -21,7 +21,7 @@ export default function ContentGaps({ gaps }: { gaps: ContentGap[] }) {
             transition={{ delay: i * 0.15 + 0.3 }}
             className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors flex items-start gap-4"
           >
-            <div className="p-2 rounded-full bg-red-500/10 text-red-400 mt-0.5">
+            <div className="p-2 rounded-full bg-[#790604]/30 text-[#790604] border border-[#790604]/20 mt-0.5 shadow-[0_0_10px_rgba(121,6,4,0.2)]">
               <AlertCircle size={18} />
             </div>
             <div>

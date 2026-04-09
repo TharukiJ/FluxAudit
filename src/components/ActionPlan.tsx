@@ -31,8 +31,8 @@ export default function ActionPlan({ actions }: { actions: ActionItem[] }) {
           onClick={() => setCompleted(isAllDone ? [] : actions.map(a => a.id))}
           className={`text-xs font-semibold px-3 py-1.5 rounded-full transition-colors border whitespace-nowrap ${
             isAllDone 
-              ? "bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 border-emerald-500/20"
-              : "bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 hover:text-white border-blue-500/20"
+              ? "bg-[#B2A18F]/20 text-[#B2A18F] hover:bg-[#B2A18F]/30 border-[#B2A18F]/30 shadow-[0_0_10px_rgba(178,161,143,0.2)]"
+              : "bg-[#0F1C38]/60 text-[#B2A18F] hover:bg-[#0F1C38]/80 hover:text-white border-[#0F1C38]"
           }`}
         >
           {isAllDone ? "Undo All" : "Fix All"}
@@ -52,7 +52,7 @@ export default function ActionPlan({ actions }: { actions: ActionItem[] }) {
                 group cursor-pointer p-3 sm:p-4 rounded-2xl border transition-all duration-300 flex items-start justify-between gap-3
                 ${
                   isDone
-                    ? "bg-emerald-500/10 border-emerald-500/20"
+                    ? "bg-[#B2A18F]/10 border-[#B2A18F]/30 shadow-[0_0_15px_rgba(178,161,143,0.1)]"
                     : "bg-white/5 border-white/10 hover:bg-white/10"
                 }
               `}
@@ -60,10 +60,10 @@ export default function ActionPlan({ actions }: { actions: ActionItem[] }) {
               <div className="flex items-start gap-3 sm:gap-4 min-w-0 flex-1">
                 <div
                   className={`
-                    mt-0.5 shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full border flex items-center justify-center transition-colors
+                    mt-0.5 shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full border flex items-center justify-center transition-all duration-300
                     ${
                       isDone
-                        ? "bg-emerald-500 border-emerald-500 text-black"
+                        ? "bg-[linear-gradient(to_bottom_right,#790604,#B2A18F)] border-[#B2A18F]/50 text-white shadow-[0_0_10px_rgba(178,161,143,0.4)]"
                         : "border-white/20 text-transparent group-hover:border-white/40"
                     }
                   `}
@@ -82,13 +82,13 @@ export default function ActionPlan({ actions }: { actions: ActionItem[] }) {
                 </div>
                 <span
                   className={`text-sm font-medium transition-colors break-words leading-snug ${
-                    isDone ? "text-emerald-400 line-through decoration-emerald-500/50" : "text-white"
+                    isDone ? "text-[#B2A18F]/70 line-through decoration-[#B2A18F]/40" : "text-white"
                   }`}
                 >
                   {action.title}
                 </span>
               </div>
-              <span className={`shrink-0 text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded-full ${isDone ? 'bg-emerald-500/20 text-emerald-400' : 'bg-blue-500/20 text-blue-400'}`}>
+              <span className={`shrink-0 text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded-full border ${isDone ? 'bg-[#B2A18F]/10 text-[#B2A18F] border-[#B2A18F]/20' : 'bg-[#0F1C38]/60 text-[#B2A18F] border-[#0F1C38]'}`}>
                 {action.impact} Impact
               </span>
             </motion.div>
