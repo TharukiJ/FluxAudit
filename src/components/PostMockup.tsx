@@ -15,7 +15,7 @@ export default function PostMockup() {
       </div>
 
       {/* Dual-Phone Frame Container */}
-      <div className="relative flex flex-col md:flex-row items-center justify-center gap-12 sm:gap-20 flex-grow bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8 sm:p-12">
+      <div className="relative flex flex-col md:flex-row items-center justify-center gap-12 sm:gap-20 flex-grow bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8 pt-16 sm:p-12 sm:pt-20">
         
         {/* The "Current" Phone (The Negative) */}
         <motion.div 
@@ -66,9 +66,9 @@ export default function PostMockup() {
         <motion.div 
           onMouseEnter={() => setIsHoveringRecommended(true)}
           onMouseLeave={() => setIsHoveringRecommended(false)}
-          className="relative flex flex-col items-center cursor-pointer z-10 -translate-y-4 sm:-translate-y-6"
-          whileHover={{ y: -30 }} // Ascends even higher on hover
-          animate={{ y: -20 }} // Sits slightly higher natively
+          className="relative flex flex-col items-center cursor-pointer z-10"
+          whileHover={{ y: -10 }} // Ascends even higher on hover
+          animate={{ y: 0 }} // Starts flat to align nicely
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
           {/* Label */}
