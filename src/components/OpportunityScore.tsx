@@ -21,13 +21,13 @@ export default function OpportunityScore({ data }: { data: ScoreData[] }) {
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       return (
-        <div className="glass-card p-4 !bg-black/90 !border-white/10 shadow-[0_0_30px_rgba(34,197,94,0.15)]">
+        <div className="glass-card p-4 !bg-black/90 !border-white/10 shadow-[0_0_30px_rgba(178,161,143,0.15)]">
           <p className="font-semibold text-white mb-2">{label}</p>
           <p className="text-gray-400 text-sm">
             Current Path: <span className="text-white ml-1">${payload[0].value.toLocaleString()}</span>
           </p>
-          <p className="text-emerald-400 font-medium text-sm mt-1">
-            Expected Growth: <span className="text-white ml-1">${payload[1].value.toLocaleString()}</span>
+          <p className="font-medium text-sm mt-1 text-transparent bg-clip-text bg-[linear-gradient(to_right,#790604,#B2A18F)] drop-shadow-[0_0_10px_rgba(178,161,143,0.2)]">
+            Expected Growth: <span className="text-white ml-1 drop-shadow-none">${payload[1].value.toLocaleString()}</span>
           </p>
         </div>
       );
@@ -39,7 +39,7 @@ export default function OpportunityScore({ data }: { data: ScoreData[] }) {
     <div className="h-full min-h-[300px] w-full p-6 flex flex-col">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-lg font-medium text-white">Opportunity Score</h3>
-        <span className="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shadow-[0_0_15px_rgba(34,197,94,0.2)]">
+        <span className="text-xs font-semibold px-3 py-1 rounded-full bg-[#0F1C38]/40 border border-[#B2A18F]/20 text-transparent bg-clip-text bg-[linear-gradient(to_right,#B2A18F,#790604)] drop-shadow-[0_0_10px_rgba(178,161,143,0.3)] shadow-[0_0_15px_rgba(121,6,4,0.3)]">
           High Potential
         </span>
       </div>
@@ -51,6 +51,11 @@ export default function OpportunityScore({ data }: { data: ScoreData[] }) {
                 <feGaussianBlur stdDeviation="4" result="blur" />
                 <feComposite in="SourceGraphic" in2="blur" operator="over" />
               </filter>
+              <linearGradient id="oppGradient" x1="0" y1="1" x2="0" y2="0">
+                <stop offset="0%" stopColor="#0F1C38" />
+                <stop offset="50%" stopColor="#790604" />
+                <stop offset="100%" stopColor="#B2A18F" />
+              </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
             <XAxis dataKey="month" stroke="rgba(255,255,255,0.3)" tick={{ fill: 'rgba(255,255,255,0.5)', fontSize: 12 }} dy={10} />
@@ -71,18 +76,19 @@ export default function OpportunityScore({ data }: { data: ScoreData[] }) {
               type="monotone" 
               name="Current Path"
               dataKey="current" 
-              stroke="#4B5563" 
+              stroke="#790604" 
               strokeWidth={3} 
+              strokeOpacity={0.6}
               dot={false}
             />
             <Line 
               type="monotone" 
               name="Projected (Fixing Gaps)"
               dataKey="projected" 
-              stroke="#10B981" 
-              strokeWidth={3}
-              dot={{ fill: '#10B981', strokeWidth: 2, r: 4, stroke: '#000' }}
-              activeDot={{ r: 6, fill: '#10B981', stroke: '#fff' }}
+              stroke="url(#oppGradient)" 
+              strokeWidth={4}
+              dot={{ fill: '#B2A18F', strokeWidth: 2, r: 4, stroke: '#000' }}
+              activeDot={{ r: 6, fill: '#B2A18F', stroke: '#fff' }}
               filter="url(#glow)"
             />
           </LineChart>
