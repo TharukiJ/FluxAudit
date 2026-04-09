@@ -53,17 +53,17 @@ export default function ExportButton() {
         className={`relative group rounded-full p-[2px] overflow-hidden ${isGenerating ? "opacity-70 cursor-not-allowed" : ""}`}
       >
         {/* Animated Conic Gradient Border */}
-        <span className="absolute inset-0 bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] animate-[spin_3s_linear_infinite] opacity-70 group-hover:opacity-100 transition-opacity" />
+        <span className="absolute inset-0 bg-[conic-gradient(from_90deg_at_50%_50%,#0F1C38_0%,#790604_33%,#B2A18F_66%,#0F1C38_100%)] animate-[spin_3s_linear_infinite] opacity-70 group-hover:opacity-100 transition-opacity" />
         
         {/* Glow effect on hover */}
-        <span className="absolute inset-0 bg-purple-500/50 blur-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <span className="absolute inset-0 bg-[#B2A18F]/40 blur-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         
         {/* Button Content */}
         <span className="relative flex items-center justify-center gap-2 px-8 py-4 bg-black rounded-full w-full h-full text-sm font-semibold tracking-wide text-white uppercase backdrop-blur-3xl">
           {isGenerating ? (
-             <><Loader2 size={18} className="text-purple-300 animate-spin" /> Generating PDF...</>
+             <><Loader2 size={18} className="text-[#B2A18F] animate-spin" /> Generating PDF...</>
           ) : (
-             <><Download size={18} className="text-purple-300" /> Generate Client Report</>
+             <><Download size={18} className="text-[#B2A18F]" /> Generate Client Report</>
           )}
         </span>
       </motion.button>
