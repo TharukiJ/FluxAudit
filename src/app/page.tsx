@@ -1,0 +1,92 @@
+"use client";
+
+import { motion } from "framer-motion";
+import TrustScore from "@/components/TrustScore";
+import CompetitorHeatmap from "@/components/CompetitorHeatmap";
+import ContentGaps from "@/components/ContentGaps";
+import ActionPlan from "@/components/ActionPlan";
+import data from "@/data.json";
+import { Activity } from "lucide-react";
+
+export default function Dashboard() {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    show: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: { 
+        type: "spring", stiffness: 100, damping: 20 
+      }
+    },
+  };
+
+  return (
+    <div className="min-h-screen text-white p-6 md:p-12 font-sans selection:bg-purple-500/30">
+      <motion.div
+        initial="hidden"
+        animate="show"
+        variants={container}
+        className="max-w-6xl mx-auto space-y-8"
+      >
+        {/* Header */}
+        <motion.header variants={item} className="flex flex-col md:flex-row md:items-end justify-between border-b border-white/10 pb-6 gap-4">
+          <div>
+            <div className="flex items-center gap-3 mb-2 text-purple-400">
+              <Activity size={24} />
+              <span className="font-semibold tracking-wide uppercase text-sm">PulseAudit</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+              Digital Health Report
+            </h1>
+            <p className="text-gray-400 mt-2 max-w-lg">
+              A comprehensive breakdown of your current online presence, competitor analysis, and clear next steps to dominate your market.
+            </p>
+          </div>
+          <div className="md:text-right">
+            <h2 className="text-2xl font-light text-white">{data.brandName}</h2>
+            <p className="text-sm text-gray-500 uppercase tracking-widest mt-1">Target Client</p>
+          </div>
+        </motion.header>
+
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-min">
+          {/* Trust Score Box - span 1 */}
+          <motion.div variants={item} className="glass-card md:col-span-1 lg:col-span-1 border border-blue-500/20 shadow-[0_0_30px_rgba(96,165,250,0.05)] overflow-hidden relative group">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <TrustScore score={data.trustScore} />
+          </motion.div>
+
+          {/* Competitor Heatmap Box - span 2 or 3 */}
+          <motion.div variants={item} className="glass-card md:col-span-2 lg:col-span-3 border border-purple-500/20 shadow-[0_0_30px_rgba(168,85,247,0.05)] overflow-hidden relative group">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <CompetitorHeatmap data={data.competitorHeatmap} />
+          </motion.div>
+
+          {/* Content Gaps - span 2 */}
+          <motion.div variants={item} className="glass-card md:col-span-1 lg:col-span-2 overflow-hidden relative group">
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <ContentGaps gaps={data.contentGaps} />
+          </motion.div>
+
+          {/* Quick-Fix Action Plan - span 2 */}
+          <motion.div variants={item} className="glass-card md:col-span-2 lg:col-span-2 overflow-hidden relative group border-t-2 border-t-emerald-500/50">
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <ActionPlan actions={data.actionPlan} />
+          </motion.div>
+        </div>
+      </motion.div>
+    </div>
+  );
+}

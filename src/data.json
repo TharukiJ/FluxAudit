@@ -1,0 +1,69 @@
+{
+  "brandName": "Local Roast Coffee",
+  "trustScore": 65,
+  "auditFindings": {
+    "positives": [
+      "High-quality photography of coffee and pastries.",
+      "Engaging tone of voice in captions.",
+      "Clear branding colors and fonts used consistently."
+    ],
+    "negatives": [
+      "No Video Content (Reels/TikToks) in the last 6 months.",
+      "Bio lacks a Call-to-Action (CTA) and clear location.",
+      "Inactive Google Maps presence with wrong hours.",
+      "Inconsistent post frequency (gaps of 2+ weeks between posts).",
+      "Low reply rate to customer comments and questions."
+    ]
+  },
+  "competitorHeatmap": [
+    {
+      "metric": "Posting Consistency",
+      "targetBrand": "Low",
+      "competitorA": "High (Daily)",
+      "competitorB": "Medium"
+    },
+    {
+      "metric": "Visual Quality",
+      "targetBrand": "High",
+      "competitorA": "Medium",
+      "competitorB": "High"
+    },
+    {
+      "metric": "Response Time",
+      "targetBrand": "Low (> 24h)",
+      "competitorA": "Fast (< 2h)",
+      "competitorB": "Med (< 12h)"
+    }
+  ],
+  "contentGaps": [
+    {
+      "title": "No Video Content",
+      "description": "Missing out on organic reach from Instagram Reels and TikToks."
+    },
+    {
+      "title": "Bio Lacks a CTA",
+      "description": "No link for reservations, ordering ahead, or mailing list."
+    },
+    {
+      "title": "Inactive Google Maps",
+      "description": "Profile unclaimed or missing updated weekend hours."
+    }
+  ],
+  "actionPlan": [
+    {
+      "id": "action-1",
+      "title": "Create a Linktree & Update Bio",
+      "impact": "High"
+    },
+    {
+      "id": "action-2",
+      "title": "Claim Google Business Profile & Update Hours",
+      "impact": "High"
+    },
+    {
+      "id": "action-3",
+      "title": "Record 3 Behind-the-Scenes Short-Form Videos",
+      "impact": "Medium"
+    }
+  ]
+}
