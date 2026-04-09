@@ -40,6 +40,7 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen text-white p-6 md:p-12 font-sans selection:bg-purple-500/30">
       <motion.div
+        id="dashboard-container"
         initial="hidden"
         animate="show"
         variants={container}
