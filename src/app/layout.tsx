@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "PulseAudit | Digital Health Dashboard",
+  title: "FluxAudit | Digital Health Dashboard",
   description: "Your comprehensive digital health audit.",
 };
 

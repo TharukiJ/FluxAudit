@@ -45,7 +45,7 @@ export default function Dashboard() {
           <div>
             <div className="flex items-center gap-3 mb-2 text-purple-400">
               <Activity size={24} />
-              <span className="font-semibold tracking-wide uppercase text-sm">PulseAudit</span>
+              <span className="font-semibold tracking-wide uppercase text-sm">FluxAudit</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
               Digital Health Report
