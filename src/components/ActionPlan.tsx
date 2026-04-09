@@ -23,7 +23,15 @@ export default function ActionPlan({ actions }: { actions: ActionItem[] }) {
 
   return (
     <div className="flex flex-col p-6 h-full">
-      <h3 className="text-lg font-medium text-white mb-6">Quick-Fix Action Plan</h3>
+      <div className="flex items-center justify-between mb-6">
+        <h3 className="text-lg font-medium text-white">Quick-Fix Action Plan</h3>
+        <button 
+          onClick={() => setCompleted(actions.map(a => a.id))}
+          className="text-xs font-semibold px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 hover:text-white transition-colors border border-blue-500/20"
+        >
+          Fix All
+        </button>
+      </div>
       <div className="flex flex-col gap-3 flex-grow">
         {actions.map((action, i) => {
           const isDone = completed.includes(action.id);

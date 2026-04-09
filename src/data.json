@@ -65,5 +65,44 @@
       "title": "Record 3 Behind-the-Scenes Short-Form Videos",
       "impact": "Medium"
     }
+  ],
+  "socialProof": [
+    {
+      "user": "@sarah_loves_coffee",
+      "text": "The pastries look amazing, but I drove there on a Sunday and they were closed! Google Maps said open. :(",
+      "sentiment": "Neutral"
+    },
+    {
+      "user": "@mike_the_foodie",
+      "text": "Best espresso in town, hands down. Just wish they posted their daily specials.",
+      "sentiment": "Positive"
+    },
+    {
+      "user": "@jessica_r",
+      "text": "Love the aesthetic of the cafe, but their online presence doesn't match the vibe.",
+      "sentiment": "Neutral"
+    }
+  ],
+  "opportunityScore": [
+    { "month": "Jan", "current": 2000, "projected": 2000 },
+    { "month": "Feb", "current": 2100, "projected": 2500 },
+    { "month": "Mar", "current": 2050, "projected": 3200 },
+    { "month": "Apr", "current": 2200, "projected": 4500 },
+    { "month": "May", "current": 2300, "projected": 6000 },
+    { "month": "Jun", "current": 2400, "projected": 8500 }
+  ],
+  "visualSEO": [
+    {
+      "item": "Keyword presence in Bio",
+      "status": "Fail"
+    },
+    {
+      "item": "Alt-text usage on images",
+      "status": "Fail"
+    },
+    {
+      "item": "Location tagging consistency",
+      "status": "Pass"
+    }
   ]
 }

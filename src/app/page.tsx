@@ -5,6 +5,11 @@ import TrustScore from "@/components/TrustScore";
 import CompetitorHeatmap from "@/components/CompetitorHeatmap";
 import ContentGaps from "@/components/ContentGaps";
 import ActionPlan from "@/components/ActionPlan";
+import SocialProof from "@/components/SocialProof";
+import OpportunityScore from "@/components/OpportunityScore";
+import VisualSEO from "@/components/VisualSEO";
+import PostMockup from "@/components/PostMockup";
+import ExportButton from "@/components/ExportButton";
 import data from "@/data.json";
 import { Activity } from "lucide-react";
 
@@ -14,8 +19,8 @@ export default function Dashboard() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
       },
     },
   };
@@ -38,7 +43,7 @@ export default function Dashboard() {
         initial="hidden"
         animate="show"
         variants={container}
-        className="max-w-6xl mx-auto space-y-8"
+        className="max-w-7xl mx-auto space-y-8"
       >
         {/* Header */}
         <motion.header variants={item} className="flex flex-col md:flex-row md:items-end justify-between border-b border-white/10 pb-6 gap-4">
@@ -61,31 +66,65 @@ export default function Dashboard() {
         </motion.header>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-min">
-          {/* Trust Score Box - span 1 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-min">
+          
+          {/* Top Left: Trust Score (span 1) */}
           <motion.div variants={item} className="glass-card md:col-span-1 lg:col-span-1 border border-blue-500/20 shadow-[0_0_30px_rgba(96,165,250,0.05)] overflow-hidden relative group">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <TrustScore score={data.trustScore} />
           </motion.div>
 
-          {/* Competitor Heatmap Box - span 2 or 3 */}
-          <motion.div variants={item} className="glass-card md:col-span-2 lg:col-span-3 border border-purple-500/20 shadow-[0_0_30px_rgba(168,85,247,0.05)] overflow-hidden relative group">
+          {/* Top Right: Competitor Heatmap (span 3) */}
+          <motion.div variants={item} className="glass-card md:col-span-1 lg:col-span-3 border border-purple-500/20 shadow-[0_0_30px_rgba(168,85,247,0.05)] overflow-hidden relative group">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <CompetitorHeatmap data={data.competitorHeatmap} />
           </motion.div>
 
-          {/* Content Gaps - span 2 */}
+          {/* Middle Left: Content Gaps (span 2) */}
           <motion.div variants={item} className="glass-card md:col-span-1 lg:col-span-2 overflow-hidden relative group">
             <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <ContentGaps gaps={data.contentGaps} />
           </motion.div>
 
-          {/* Quick-Fix Action Plan - span 2 */}
-          <motion.div variants={item} className="glass-card md:col-span-2 lg:col-span-2 overflow-hidden relative group border-t-2 border-t-emerald-500/50">
+          {/* Middle Right: Opportunity Score (span 2) */}
+          <motion.div variants={item} className="glass-card md:col-span-1 lg:col-span-2 overflow-hidden relative group border-t-2 border-t-emerald-500/50">
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <OpportunityScore data={data.opportunityScore} />
+          </motion.div>
+
+          {/* Row 3: Action Plan / Social Proof */}
+          {/* Action Plan (span 2) */}
+          <motion.div variants={item} className="glass-card md:col-span-1 lg:col-span-2 overflow-hidden relative group border-t-2 border-t-emerald-500/30">
             <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <ActionPlan actions={data.actionPlan} />
           </motion.div>
+
+          {/* Social Proof (span 2) */}
+          <motion.div variants={item} className="glass-card md:col-span-1 lg:col-span-2 overflow-hidden relative group">
+            <div className="absolute inset-0 bg-gradient-to-bl from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <SocialProof reviews={data.socialProof} />
+          </motion.div>
+
+          {/* Row 4: Visual SEO / Post Mockup */}
+          {/* Visual SEO (span 1) */}
+          <motion.div variants={item} className="glass-card md:col-span-1 lg:col-span-1 overflow-hidden relative group">
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <VisualSEO data={data.visualSEO} />
+          </motion.div>
+
+          {/* Post Mockup (span 3) */}
+          <motion.div variants={item} className="glass-card md:col-span-1 lg:col-span-3 border border-purple-500/20 shadow-[0_0_30px_rgba(168,85,247,0.05)] overflow-hidden relative group">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <PostMockup />
+          </motion.div>
+
         </div>
+
+        {/* Generate Report Button */}
+        <motion.div variants={item}>
+          <ExportButton />
+        </motion.div>
+
       </motion.div>
     </div>
   );
