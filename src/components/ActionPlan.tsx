@@ -21,15 +21,21 @@ export default function ActionPlan({ actions }: { actions: ActionItem[] }) {
     }
   };
 
+  const isAllDone = actions.length > 0 && completed.length === actions.length;
+
   return (
     <div className="flex flex-col p-6 h-full">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between mb-6 gap-4">
         <h3 className="text-lg font-medium text-white">Quick-Fix Action Plan</h3>
         <button 
-          onClick={() => setCompleted(actions.map(a => a.id))}
-          className="text-xs font-semibold px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 hover:text-white transition-colors border border-blue-500/20"
+          onClick={() => setCompleted(isAllDone ? [] : actions.map(a => a.id))}
+          className={`text-xs font-semibold px-3 py-1.5 rounded-full transition-colors border whitespace-nowrap ${
+            isAllDone 
+              ? "bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 border-emerald-500/20"
+              : "bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 hover:text-white border-blue-500/20"
+          }`}
         >
-          Fix All
+          {isAllDone ? "Undo All" : "Fix All"}
         </button>
       </div>
       <div className="flex flex-col gap-3 flex-grow">
@@ -43,7 +49,7 @@ export default function ActionPlan({ actions }: { actions: ActionItem[] }) {
               transition={{ delay: i * 0.15 + 0.6 }}
               onClick={() => toggleAction(action.id)}
               className={`
-                group cursor-pointer p-4 rounded-2xl border transition-all duration-300 flex items-center justify-between
+                group cursor-pointer p-3 sm:p-4 rounded-2xl border transition-all duration-300 flex items-center justify-between gap-3
                 ${
                   isDone
                     ? "bg-emerald-500/10 border-emerald-500/20"
@@ -51,10 +57,10 @@ export default function ActionPlan({ actions }: { actions: ActionItem[] }) {
                 }
               `}
             >
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
                 <div
                   className={`
-                    w-6 h-6 rounded-full border flex items-center justify-center transition-colors
+                    shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full border flex items-center justify-center transition-colors
                     ${
                       isDone
                         ? "bg-emerald-500 border-emerald-500 text-black"
@@ -75,14 +81,14 @@ export default function ActionPlan({ actions }: { actions: ActionItem[] }) {
                   </AnimatePresence>
                 </div>
                 <span
-                  className={`text-sm font-medium transition-colors ${
+                  className={`text-sm font-medium transition-colors break-words leading-snug ${
                     isDone ? "text-emerald-400 line-through decoration-emerald-500/50" : "text-white"
                   }`}
                 >
                   {action.title}
                 </span>
               </div>
-              <span className={`text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded-full ${isDone ? 'bg-emerald-500/20 text-emerald-400' : 'bg-blue-500/20 text-blue-400'}`}>
+              <span className={`shrink-0 text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded-full ${isDone ? 'bg-emerald-500/20 text-emerald-400' : 'bg-blue-500/20 text-blue-400'}`}>
                 {action.impact} Impact
               </span>
             </motion.div>
