@@ -12,7 +12,7 @@ export default function VisualSEO({ data }: { data: SEOItem[] }) {
   return (
     <div className="flex flex-col p-6 h-full">
       <div className="flex items-center gap-3 mb-6">
-        <div className="p-2 rounded-full bg-blue-500/10 text-blue-400">
+        <div className="p-2 rounded-full bg-[#0F1C38] text-[#B2A18F] shadow-[0_0_10px_rgba(15,28,56,0.8)]">
           <Search size={20} />
         </div>
         <h3 className="text-lg font-medium text-white">Search Visibility</h3>
@@ -30,8 +30,8 @@ export default function VisualSEO({ data }: { data: SEOItem[] }) {
               className={`
                 flex items-center justify-between p-4 rounded-xl border transition-all duration-300
                 ${isPass 
-                  ? "bg-emerald-500/5 border-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.05)]" 
-                  : "bg-red-500/5 border-red-500/20 shadow-[0_0_15px_rgba(239,68,68,0.05)]"
+                  ? "bg-[#0F1C38]/40 border-[#B2A18F]/20 shadow-[0_0_15px_rgba(178,161,143,0.05)]" 
+                  : "bg-[#790604]/10 border-[#790604]/20 shadow-[0_0_15px_rgba(121,6,4,0.1)]"
                 }
               `}
             >
@@ -41,13 +41,13 @@ export default function VisualSEO({ data }: { data: SEOItem[] }) {
               <div className="flex items-center gap-2 flex-shrink-0">
                 {isPass ? (
                   <>
-                    <span className="text-xs uppercase tracking-wider font-bold text-emerald-400">Pass</span>
-                    <CheckCircle2 size={18} className="text-emerald-400" />
+                    <span className="text-xs uppercase tracking-wider font-bold text-[#B2A18F]">Pass</span>
+                    <CheckCircle2 size={18} className="text-[#B2A18F]" />
                   </>
                 ) : (
                   <>
-                    <span className="text-xs uppercase tracking-wider font-bold text-red-400">Fail</span>
-                    <XCircle size={18} className="text-red-400" />
+                    <span className="text-xs uppercase tracking-wider font-bold text-[#790604]">Fail</span>
+                    <XCircle size={18} className="text-[#790604]" />
                   </>
                 )}
               </div>
