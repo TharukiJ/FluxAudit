@@ -1,5 +1,5 @@
 export const auditData = {
-  brandName: "Local Roast Coffee",
+  brandName: "The Tavern Coffee",
   trustScore: 65,
   auditFindings: {
     positives: [
