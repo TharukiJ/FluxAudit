@@ -68,8 +68,8 @@ export const auditData = {
   ],
   socialProof: [
     {
-      user: "@sarah_loves_coffee",
-      text: "The pastries look amazing, but I drove there on a Sunday and they were closed! Google Maps said open. :(",
+      user: "Barista",
+      text: "Perfect spot for coffee lovers! ☕️ Rich aroma, smooth flavor, and perfectly brewed every time. The barista's passion really shows in every cup. A must-visit if you love great cof Nice spot for coffee calm study space. Hot and cold options. Cheese cake lovers :(",
       sentiment: "Neutral"
     },
     {
