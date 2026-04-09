@@ -33,9 +33,10 @@ export default function TrustScore({ score }: { score: number }) {
             strokeLinecap="round"
           />
           <defs>
-            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#60A5FA" />
-              <stop offset="100%" stopColor="#A855F7" />
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#790604" />
+              <stop offset="50%" stopColor="#B2A18F" />
+              <stop offset="100%" stopColor="#0F1C38" />
             </linearGradient>
           </defs>
         </svg>
@@ -44,7 +45,7 @@ export default function TrustScore({ score }: { score: number }) {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
+            className="text-4xl font-bold bg-clip-text text-transparent bg-[linear-gradient(to_bottom_right,#790604,#B2A18F,#0F1C38)] drop-shadow-[0_0_10px_rgba(178,161,143,0.2)]"
           >
             {score}
           </motion.span>
