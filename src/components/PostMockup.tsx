@@ -135,10 +135,12 @@ export default function PostMockup({ data }: { data: PostMockupData }) {
 
               {/* Shimmer CTA Button */}
               <div className="absolute bottom-6 left-0 w-full px-4 text-center z-20">
-                <div className="relative overflow-hidden py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-[10px] sm:text-xs font-bold border border-cyan-300 shadow-[0_0_15px_rgba(34,211,238,0.5)]">
-                  Watch Full Video
-                  {/* Shimmer Effect overlay */}
-                  <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-40 animate-[shimmer_2s_infinite]"></div>
+                <div className="relative py-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-[10px] sm:text-xs font-bold shadow-[0_0_15px_rgba(34,211,238,0.5)] border border-cyan-300">
+                  <span className="relative z-10">Watch Full Video</span>
+                  {/* Shimmer Effect overlay isolated into its own overflow container */}
+                  <div className="absolute inset-0 overflow-hidden rounded-full pointer-events-none z-0">
+                    <div className="absolute top-0 -inset-full h-full w-1/2 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-40 animate-[shimmer_2s_infinite]"></div>
+                  </div>
                 </div>
               </div>
             </div>
