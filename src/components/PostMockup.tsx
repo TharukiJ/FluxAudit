@@ -24,7 +24,7 @@ export default function PostMockup() {
           }`}
         >
           {/* Label */}
-          <div className="absolute -top-8 text-red-500/80 font-mono text-[10px] sm:text-xs font-bold tracking-widest uppercase">
+          <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-max text-red-500/80 font-mono text-[10px] sm:text-xs font-bold tracking-widest uppercase">
             [ STATUS: INEFFICIENT ]
           </div>
 
@@ -72,43 +72,43 @@ export default function PostMockup() {
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
           {/* Label */}
-          <div className="absolute -top-8 text-emerald-400 font-mono text-[10px] sm:text-xs font-bold tracking-widest uppercase animate-pulse shadow-emerald-400/50 drop-shadow-[0_0_8px_rgba(52,211,153,0.8)]">
+          <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-max text-emerald-400 font-mono text-[10px] sm:text-xs font-bold tracking-widest uppercase animate-pulse shadow-emerald-400/50 drop-shadow-[0_0_8px_rgba(52,211,153,0.8)]">
             [ STATUS: OPTIMIZED ]
           </div>
 
-          <div className="relative w-[150px] sm:w-[170px] h-[300px] sm:h-[340px] rounded-[28px] border-[8px] border-cyan-400 bg-black overflow-visible shadow-[0_0_50px_rgba(34,211,238,0.3)] transition-shadow duration-300 hover:shadow-[0_0_80px_rgba(34,211,238,0.6)]">
+          <div className="relative w-[150px] sm:w-[170px] h-[300px] sm:h-[340px] rounded-[28px] border-[8px] border-gray-900 bg-black overflow-visible shadow-[0_0_50px_rgba(34,211,238,0.3)] transition-shadow duration-300 hover:shadow-[0_0_80px_rgba(34,211,238,0.6)]">
             
             {/* Annotations (Tooltips) */}
             {isHoveringRecommended && (
               <>
                 {/* Tooltip 1 */}
                 <motion.div 
-                  initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 40 }}
-                  className="absolute top-[20%] -right-[140%] sm:-right-[180%] w-[120px] sm:w-[160px] p-2 sm:p-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl shadow-lg z-30"
+                  initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }}
+                  className="absolute top-[20%] -right-[110%] sm:-right-[130%] min-w-[140px] sm:min-w-[160px] p-2.5 sm:p-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl shadow-lg z-30"
                 >
-                  <div className="text-[10px] sm:text-xs font-bold text-white mb-1">Hook-driven Headline</div>
-                  <div className="text-[8px] sm:text-[10px] text-gray-300 leading-tight">Increases watch time by 40%</div>
-                  <svg className="absolute top-1/2 -left-6 w-6 h-6 text-white/30 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><line x1="24" y1="12" x2="0" y2="12"></line></svg>
+                  <div className="text-[11px] sm:text-xs font-bold text-white mb-1.5 leading-tight">Hook-driven Headline</div>
+                  <div className="text-[9px] sm:text-[10px] text-gray-300 leading-snug">Increases watch time by 40%</div>
+                  <div className="absolute top-1/2 right-[100%] w-4 sm:w-6 h-[1px] bg-white/30"></div>
                 </motion.div>
                 
                 {/* Tooltip 2 */}
                 <motion.div 
-                  initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 40 }} transition={{ delay: 0.1 }}
-                  className="absolute top-[50%] -right-[140%] sm:-right-[180%] w-[120px] sm:w-[160px] p-2 sm:p-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl shadow-lg z-30"
+                  initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}
+                  className="absolute top-[50%] -right-[110%] sm:-right-[130%] min-w-[140px] sm:min-w-[160px] p-2.5 sm:p-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl shadow-lg z-30"
                 >
-                  <div className="text-[10px] sm:text-xs font-bold text-white mb-1">High-Contrast Visual</div>
-                  <div className="text-[8px] sm:text-[10px] text-gray-300 leading-tight">Stops the scroll instantly</div>
-                  <svg className="absolute top-1/2 -left-6 w-6 h-6 text-white/30 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><line x1="24" y1="12" x2="0" y2="12"></line></svg>
+                  <div className="text-[11px] sm:text-xs font-bold text-white mb-1.5 leading-tight">High-Contrast Visual</div>
+                  <div className="text-[9px] sm:text-[10px] text-gray-300 leading-snug">Stops the scroll instantly</div>
+                  <div className="absolute top-1/2 right-[100%] w-4 sm:w-6 h-[1px] bg-white/30"></div>
                 </motion.div>
 
                 {/* Tooltip 3 */}
                 <motion.div 
-                  initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 40 }} transition={{ delay: 0.2 }}
-                  className="absolute top-[80%] -right-[140%] sm:-right-[180%] w-[120px] sm:w-[160px] p-2 sm:p-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl shadow-lg z-30"
+                  initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}
+                  className="absolute top-[80%] -right-[110%] sm:-right-[130%] min-w-[140px] sm:min-w-[160px] p-2.5 sm:p-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl shadow-lg z-30"
                 >
-                  <div className="text-[10px] sm:text-xs font-bold text-white mb-1">Brand-Aligned Colors</div>
-                  <div className="text-[8px] sm:text-[10px] text-gray-300 leading-tight">Builds visual recognition</div>
-                  <svg className="absolute top-1/2 -left-6 w-6 h-6 text-white/30 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><line x1="24" y1="12" x2="0" y2="12"></line></svg>
+                  <div className="text-[11px] sm:text-xs font-bold text-white mb-1.5 leading-tight">Brand-Aligned Colors</div>
+                  <div className="text-[9px] sm:text-[10px] text-gray-300 leading-snug">Builds visual recognition</div>
+                  <div className="absolute top-1/2 right-[100%] w-4 sm:w-6 h-[1px] bg-white/30"></div>
                 </motion.div>
               </>
             )}
@@ -124,14 +124,14 @@ export default function PostMockup() {
             </div>
 
             {/* Fake High Quality Content */}
-            <div className="w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900 via-gray-900 to-black overflow-hidden relative">
+            <div className="w-full h-full rounded-[20px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900 via-gray-900 to-black overflow-hidden relative">
               <div className="absolute inset-0 opacity-30 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay mix-blend-color-dodge"></div>
               
-              <div className="flex flex-col items-center justify-center h-full px-4 relative z-10">
+              <div className="flex flex-col items-center justify-center h-full px-4 relative z-10 w-full">
                 {/* The Hook overlay */}
-                <div className="text-white font-mono font-black text-center text-[12px] sm:text-sm tracking-tighter leading-snug uppercase mb-16 drop-shadow-[0_5px_5px_rgba(0,0,0,1)]">
-                  <span className="bg-cyan-500 text-black px-1 mr-1">3 SECRETS</span><br/>
-                  TO PERFECT COFFEE
+                <div className="text-white font-mono font-black text-center text-[12px] sm:text-sm tracking-tighter leading-snug uppercase mb-16 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] flex flex-col items-center">
+                  <span className="bg-cyan-500 text-black px-2 py-0.5 mb-1 rounded-sm">3 SECRETS</span>
+                  <span>TO PERFECT COFFEE</span>
                 </div>
               </div>
 

@@ -113,8 +113,8 @@ export default function Dashboard() {
           </motion.div>
 
           {/* Post Mockup (span 3) */}
-          <motion.div variants={item} className="glass-card md:col-span-1 lg:col-span-3 border border-purple-500/20 shadow-[0_0_30px_rgba(168,85,247,0.05)] overflow-hidden relative group">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <motion.div variants={item} className="glass-card md:col-span-1 lg:col-span-3 border border-purple-500/20 shadow-[0_0_30px_rgba(168,85,247,0.05)] relative group">
+            <div className="absolute inset-0 rounded-[24px] overflow-hidden bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <PostMockup />
           </motion.div>
 
