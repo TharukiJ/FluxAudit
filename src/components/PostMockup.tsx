@@ -26,7 +26,7 @@ export default function PostMockup({ data }: { data: PostMockupData }) {
       </div>
 
       {/* Dual-Phone Frame Container */}
-      <div className="relative flex flex-col md:flex-row items-center justify-center gap-12 sm:gap-20 flex-grow bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8 pt-16 sm:p-12 sm:pt-20">
+      <div className="relative flex flex-col md:flex-row items-center justify-center gap-12 sm:gap-20 flex-grow p-8 pt-16 sm:p-12 sm:pt-20">
         
         {/* The "Current" Phone (The Negative) */}
         <motion.div 
