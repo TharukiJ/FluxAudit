@@ -45,7 +45,7 @@ export default function OpportunityScore({ data }: { data: ScoreData[] }) {
       </div>
       <div className="flex-grow w-full h-[250px]">
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={data} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+          <LineChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
             <defs>
               <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
                 <feGaussianBlur stdDeviation="4" result="blur" />
@@ -54,7 +54,17 @@ export default function OpportunityScore({ data }: { data: ScoreData[] }) {
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
             <XAxis dataKey="month" stroke="rgba(255,255,255,0.3)" tick={{ fill: 'rgba(255,255,255,0.5)', fontSize: 12 }} dy={10} />
-            <YAxis tick={false} axisLine={false} />
+            <YAxis 
+              tick={{ fill: 'rgba(255,255,255,0.5)', fontSize: 11 }} 
+              axisLine={false} 
+              tickLine={false}
+              tickFormatter={(value) => {
+                if (value >= 1000000) return `$${(value / 1000000).toFixed(1)}M`;
+                if (value >= 1000) return `$${(value / 1000).toFixed(1)}k`;
+                return `$${value}`;
+              }}
+              dx={-10}
+            />
             <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'rgba(255,255,255,0.1)', strokeWidth: 1, strokeDasharray: '5 5' }} />
             <Legend wrapperStyle={{ paddingTop: '20px', fontSize: '12px' }} />
             <Line 
