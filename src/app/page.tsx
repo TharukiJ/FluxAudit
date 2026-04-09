@@ -110,8 +110,8 @@ export default function Dashboard() {
           </div>
 
           <div className="relative z-10 max-w-2xl">
-            <div className="flex items-center gap-3 mb-6 text-[#B2A18F] bg-[#0F1C38]/40 border border-[#B2A18F]/20 px-4 py-1.5 rounded-full w-max shadow-[0_0_20px_rgba(15,28,56,0.6)] backdrop-blur-md">
-              <Activity size={16} />
+            <div className="flex items-center gap-3 mb-6 text-[#EEDCC1] bg-[#0F1C38]/70 border border-[#B2A18F]/60 px-4 py-1.5 rounded-full w-max shadow-[0_0_25px_rgba(178,161,143,0.4)] backdrop-blur-md">
+              <Activity size={16} className="text-[#B2A18F]" />
               <span className="font-bold tracking-[0.2em] uppercase text-[10px]">FluxAudit Premium</span>
             </div>
             
