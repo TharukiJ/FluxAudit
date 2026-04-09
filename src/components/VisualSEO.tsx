@@ -35,10 +35,10 @@ export default function VisualSEO({ data }: { data: SEOItem[] }) {
                 }
               `}
             >
-              <span className={`text-sm font-medium ${isPass ? 'text-white/90' : 'text-white/90'}`}>
+              <span className={`text-sm font-medium flex-1 min-w-0 pr-3 break-words ${isPass ? 'text-white/90' : 'text-white/90'}`}>
                 {seo.item}
               </span>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-shrink-0">
                 {isPass ? (
                   <>
                     <span className="text-xs uppercase tracking-wider font-bold text-emerald-400">Pass</span>

@@ -47,7 +47,7 @@ export default function Dashboard() {
         className="max-w-7xl mx-auto space-y-8"
       >
         {/* Header */}
-        <motion.header variants={item} className="flex flex-col md:flex-row md:items-end justify-between border-b border-white/10 pb-6 gap-4">
+        <motion.div variants={item} className="flex flex-col md:flex-row md:items-end justify-between border-b border-white/10 pb-6 gap-4">
           <div>
             <div className="flex items-center gap-3 mb-2 text-purple-400">
               <Activity size={24} />
@@ -59,12 +59,23 @@ export default function Dashboard() {
             <p className="text-gray-400 mt-2 max-w-lg">
               A comprehensive breakdown of your current online presence, competitor analysis, and clear next steps to dominate your market.
             </p>
+            <div className="flex flex-wrap items-center gap-3 mt-4">
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/80">
+                <span className="text-white/40 mr-1">Vibe:</span> {data.brandVibe}
+              </span>
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-red-500/10 border border-red-500/20 text-red-400">
+                <span className="text-red-400/50 mr-1">Revenue Leak:</span> {data.revenueLeakEstimate}
+              </span>
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+                <span className="text-emerald-400/50 mr-1">Quick Win:</span> {data.quickestWin}
+              </span>
+            </div>
           </div>
           <div className="md:text-right">
-            <h2 className="text-2xl font-light text-white">{data.brandName}</h2>
-            <p className="text-sm text-gray-500 uppercase tracking-widest mt-1">Target Client</p>
+            <h2 className="text-3xl font-bold text-white tracking-tight">{data.brandName}</h2>
+            <p className="text-sm text-gray-500 uppercase tracking-widest mt-1">Target Client Analysis</p>
           </div>
-        </motion.header>
+        </motion.div>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-min">

@@ -1,95 +1,84 @@
 export const auditData = {
-  brandName: "The Tavern Coffee",
-  trustScore: 65,
+  brandName: "NanoTech SL",
+  trustScore: 42,
+  revenueLeakEstimate: "$2,800/mo",
+  brandVibe: "Modern Tech",
+  quickestWin: "Update Google Maps Location & Hours",
   auditFindings: {
     positives: [
-      "High-quality photography of coffee and pastries.",
-      "Engaging tone of voice in captions.",
-      "Clear branding colors and fonts used consistently."
+      "Good variety of latest gadgets.",
+      "Active on Facebook groups."
     ],
     negatives: [
-      "No Video Content (Reels/TikToks) in the last 6 months.",
-      "Bio lacks a Call-to-Action (CTA) and clear location.",
-      "Inactive Google Maps presence with wrong hours.",
-      "Inconsistent post frequency (gaps of 2+ weeks between posts).",
-      "Low reply rate to customer comments and questions."
+      "Blurry photos taken inside the shop with bad lighting.",
+      "Google Maps shows they are open on Sundays, but they are closed.",
+      "No video unboxing or feature reviews.",
+      "Caption language is too technical and boring."
     ]
   },
   competitorHeatmap: [
     {
-      metric: "Posting Consistency",
+      metric: "Trust Factor",
       targetBrand: "Low",
-      competitorA: "High (Daily)",
-      competitorB: "Medium"
-    },
-    {
-      metric: "Visual Quality",
-      targetBrand: "High",
-      competitorA: "Medium",
+      competitorA: "High",
       competitorB: "High"
     },
     {
       metric: "Response Time",
-      targetBrand: "Low (> 24h)",
-      competitorA: "Fast (< 2h)",
-      competitorB: "Med (< 12h)"
+      targetBrand: "Medium",
+      competitorA: "Fast",
+      competitorB: "Medium"
+    },
+    {
+      metric: "Visual Quality",
+      targetBrand: "Low",
+      competitorA: "High",
+      competitorB: "Medium"
     }
   ],
   contentGaps: [
     {
-      title: "No Video Content",
-      description: "Missing out on organic reach from Instagram Reels and TikToks."
+      title: "No Video Unboxings",
+      description: "Missing massive reach from tech lifestyle TikTok/Reels audience."
     },
     {
-      title: "Bio Lacks a CTA",
-      description: "No link for reservations, ordering ahead, or mailing list."
+      title: "Technical Captions",
+      description: "Too boring for casual buyers looking for tech benefits, not just specs."
     },
     {
-      title: "Inactive Google Maps",
-      description: "Profile unclaimed or missing updated weekend hours."
+      title: "Google Maps Error",
+      description: "Listing says open Sunday, causing angry closed-door customers."
     }
   ],
   actionPlan: [
-    {
-      id: "action-1",
-      title: "Create a Linktree & Update Bio",
-      impact: "High"
-    },
-    {
-      id: "action-2",
-      title: "Claim Google Business Profile & Update Hours",
-      impact: "High"
-    },
-    {
-      id: "action-3",
-      title: "Record 3 Behind-the-Scenes Short-Form Videos",
-      impact: "Medium"
-    }
+    { id: "t1", title: "Claim Business Profile", impact: "High" },
+    { id: "t2", title: "Hire a Content Creator for Unboxings", impact: "High" },
+    { id: "t3", title: "Run a 'Review & Win' Contest", impact: "Medium" }
   ],
   socialProof: [
     {
-      user: "Barista",
-      text: "Perfect spot for coffee lovers! ☕️ Rich aroma, smooth flavor, and perfectly brewed every time. The barista's passion really shows in every cup. A must-visit if you love great cof Nice spot for coffee calm study space. Hot and cold options. Cheese cake lovers :(",
+      user: "@gadgetfreak",
+      text: "Drove 40 mins on Sunday to buy a PS5 and they were closed despite Google saying open! 🤬",
       sentiment: "Neutral"
     },
     {
-      user: "@mike_the_foodie",
-      text: "Best espresso in town, hands down. Just wish they posted their daily specials.",
+      user: "Nimal Perera",
+      text: "Good prices but hard to know what they actually have in stock online.",
+      sentiment: "Neutral"
+    },
+    {
+      user: "@tech_guru",
+      text: "Bought my iPhone here. Great service, wish they had an online catalog.",
       sentiment: "Positive"
-    },
-    {
-      user: "@jessica_r",
-      text: "Love the aesthetic of the cafe, but their online presence doesn't match the vibe.",
-      sentiment: "Neutral"
     }
   ],
   opportunityScore: [
-    { month: "Jan", current: 2000, projected: 2000 },
-    { month: "Feb", current: 2100, projected: 2500 },
-    { month: "Mar", current: 2050, projected: 3200 },
-    { month: "Apr", current: 2200, projected: 4500 },
-    { month: "May", current: 2300, projected: 6000 },
-    { month: "Jun", current: 2400, projected: 8500 }
+    { month: "Jan", current: 10000, projected: 10000 },
+    { month: "Feb", current: 10500, projected: 14000 },
+    { month: "Mar", current: 10200, projected: 19000 },
+    { month: "Apr", current: 11000, projected: 25000 },
+    { month: "May", current: 11200, projected: 31000 },
+    { month: "Jun", current: 11500, projected: 40000 }
   ],
   visualSEO: [
     {
@@ -97,23 +86,23 @@ export const auditData = {
       status: "Fail"
     },
     {
-      item: "Alt-text usage on images",
+      item: "Product unboxing visuals",
       status: "Fail"
     },
     {
       item: "Location tagging consistency",
-      status: "Pass"
+      status: "Fail"
     }
   ],
   postMockup: {
     hook: {
-      highlight: "3 SECRETS",
-      subtext: "TO PERFECT COFFEE"
+      highlight: "NEW DROP",
+      subtext: "UNBOX WITH US"
     },
     tooltips: [
-      { title: "Hook-driven Headline", description: "Increases watch time by 40%" },
-      { title: "High-Contrast Visual", description: "Stops the scroll instantly" },
-      { title: "Brand-Aligned Colors", description: "Builds visual recognition" }
+      { title: "Trending Audio Hooks", description: "Boosts algorithmic video reach" },
+      { title: "Dynamic Lighting", description: "Makes gadgets look premium" },
+      { title: "Clear CTA", description: "Directs traffic to WhatsApp/Site" }
     ]
   }
 };
