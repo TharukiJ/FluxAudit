@@ -10,7 +10,7 @@ import OpportunityScore from "@/components/OpportunityScore";
 import VisualSEO from "@/components/VisualSEO";
 import PostMockup from "@/components/PostMockup";
 import ExportButton from "@/components/ExportButton";
-import data from "@/data.json";
+import { auditData as data } from "@/auditData";
 import { Activity } from "lucide-react";
 
 export default function Dashboard() {
