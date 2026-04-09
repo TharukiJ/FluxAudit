@@ -46,34 +46,50 @@ export default function Dashboard() {
         variants={container}
         className="max-w-7xl mx-auto space-y-8"
       >
-        {/* Header */}
-        <motion.div variants={item} className="flex flex-col md:flex-row md:items-end justify-between border-b border-white/10 pb-6 gap-4">
-          <div>
-            <div className="flex items-center gap-3 mb-2 text-purple-400">
-              <Activity size={24} />
-              <span className="font-semibold tracking-wide uppercase text-sm">FluxAudit</span>
+        {/* Aesthetic Hero Header */}
+        <motion.div variants={item} className="relative flex flex-col md:flex-row md:items-end justify-between border-b border-white/5 pb-12 gap-8 pt-4">
+          
+          {/* Ambient Background Orbs */}
+          <div className="absolute -top-20 -left-20 w-[400px] h-[400px] bg-[#0F1C38] rounded-full mix-blend-screen filter blur-[100px] opacity-80 z-0 pointer-events-none"></div>
+          <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-[#790604] rounded-full mix-blend-screen filter blur-[120px] opacity-30 z-0 pointer-events-none"></div>
+          <div className="absolute -bottom-20 left-1/2 w-[250px] h-[250px] bg-[#B2A18F] rounded-full mix-blend-screen filter blur-[100px] opacity-10 z-0 pointer-events-none"></div>
+
+          <div className="relative z-10 max-w-2xl">
+            <div className="flex items-center gap-3 mb-6 text-[#B2A18F] bg-[#0F1C38]/40 border border-[#B2A18F]/20 px-4 py-1.5 rounded-full w-max shadow-[0_0_20px_rgba(15,28,56,0.6)] backdrop-blur-md">
+              <Activity size={16} />
+              <span className="font-bold tracking-[0.2em] uppercase text-[10px]">FluxAudit Premium</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Digital Health Report
+            
+            <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-transparent bg-clip-text bg-[linear-gradient(to_right,#ffffff,#B2A18F)] drop-shadow-[0_0_30px_rgba(178,161,143,0.2)] mb-4">
+              Digital Health Report.
             </h1>
-            <p className="text-gray-400 mt-2 max-w-lg">
+            
+            <p className="text-gray-400 mt-2 text-lg font-light leading-relaxed max-w-xl">
               A comprehensive breakdown of your current online presence, competitor analysis, and clear next steps to dominate your market.
             </p>
-            <div className="flex flex-wrap items-center gap-3 mt-4">
-              <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/80">
-                <span className="text-white/40 mr-1">Vibe:</span> {data.brandVibe}
+            
+            <div className="flex flex-wrap items-center gap-4 mt-10">
+              <span className="flex items-center gap-2 text-xs font-bold px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-[#B2A18F] backdrop-blur-md shadow-lg">
+                <span className="text-gray-500 uppercase tracking-widest text-[10px]">Vibe</span> 
+                {data.brandVibe}
               </span>
-              <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-red-500/10 border border-red-500/20 text-red-400">
-                <span className="text-red-400/50 mr-1">Revenue Leak:</span> {data.revenueLeakEstimate}
+              <span className="flex items-center gap-2 text-xs font-bold px-4 py-2.5 rounded-xl bg-[#790604]/20 border border-[#790604]/30 text-white backdrop-blur-md shadow-[0_0_15px_rgba(121,6,4,0.3)]">
+                <span className="text-[#790604] brightness-150 uppercase tracking-widest text-[10px]">Revenue Leak</span> 
+                {data.revenueLeakEstimate}
               </span>
-              <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
-                <span className="text-emerald-400/50 mr-1">Quick Win:</span> {data.quickestWin}
+              <span className="flex items-center gap-2 text-xs font-bold px-4 py-2.5 rounded-xl bg-[#0F1C38]/80 border border-[#B2A18F]/30 text-white backdrop-blur-md shadow-[0_0_20px_rgba(15,28,56,0.6)]">
+                <span className="text-[#B2A18F] uppercase tracking-widest text-[10px]">Quick Win</span> 
+                {data.quickestWin}
               </span>
             </div>
           </div>
-          <div className="md:text-right">
-            <h2 className="text-3xl font-bold text-white tracking-tight">{data.brandName}</h2>
-            <p className="text-sm text-gray-500 uppercase tracking-widest mt-1">Target Client Analysis</p>
+          
+          <div className="md:text-right relative z-10 flex flex-col md:items-end">
+            <p className="text-[10px] text-[#B2A18F] uppercase tracking-[0.3em] mb-2 font-bold opacity-80">Target Client Analysis</p>
+            <h2 className="text-4xl md:text-5xl font-light text-white tracking-tight">
+              {data.brandName}
+            </h2>
+            <div className="h-[2px] w-16 bg-[linear-gradient(to_right,transparent,#B2A18F)] mt-5"></div>
           </div>
         </motion.div>
 
