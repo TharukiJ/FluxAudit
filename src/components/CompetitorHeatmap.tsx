@@ -38,11 +38,17 @@ export default function CompetitorHeatmap({ data }: { data: HeatmapData[] }) {
     if (active && payload && payload.length) {
       const orig = payload[0].payload.original;
       return (
-        <div className="glass-card p-4 !bg-black/80 !border-white/10 shadow-2xl">
+        <div className="glass-card p-4 !bg-black/90 !border-white/10 shadow-2xl">
           <p className="font-semibold text-white mb-2">{label}</p>
-          <p className="text-blue-400 text-sm">You: <span className="text-white ml-2">{orig.targetBrand}</span></p>
-          <p className="text-purple-400 text-sm">Competitor A: <span className="text-white ml-2">{orig.competitorA}</span></p>
-          <p className="text-gray-400 text-sm">Competitor B: <span className="text-white ml-2">{orig.competitorB}</span></p>
+          <p className="text-sm" style={{ color: "#790604" }}>
+            You: <span className="text-white ml-2">{orig.targetBrand}</span>
+          </p>
+          <p className="text-sm" style={{ color: "#0F1C38" }}>
+            Competitor A: <span className="text-white ml-2">{orig.competitorA}</span>
+          </p>
+          <p className="text-sm" style={{ color: "#B2A18F" }}>
+            Competitor B: <span className="text-white ml-2">{orig.competitorB}</span>
+          </p>
         </div>
       );
     }
@@ -60,9 +66,9 @@ export default function CompetitorHeatmap({ data }: { data: HeatmapData[] }) {
             <YAxis tick={false} axisLine={false} />
             <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(255,255,255,0.02)' }} />
             <Legend wrapperStyle={{ paddingTop: '20px', fontSize: '12px' }} />
-            <Bar dataKey="You" fill="#60A5FA" radius={[4, 4, 0, 0]} />
-            <Bar dataKey="Competitor A" fill="#A855F7" radius={[4, 4, 0, 0]} />
-            <Bar dataKey="Competitor B" fill="#4B5563" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="You" fill="#790604" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="Competitor A" fill="#0F1C38" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="Competitor B" fill="#B2A18F" radius={[4, 4, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>
