@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 import { motion } from "framer-motion";
 import TrustScore from "@/components/TrustScore";
 import CompetitorHeatmap from "@/components/CompetitorHeatmap";
@@ -14,6 +16,34 @@ import { auditData as data } from "@/auditData";
 import { Activity } from "lucide-react";
 
 export default function Dashboard() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [dots, setDots] = useState<{ id: number; x: number; y: number; size: number; color: string; velocity: number; duration: number }[]>([]);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({
+        x: (e.clientX - window.innerWidth / 2) / 20,
+        y: (e.clientY - window.innerHeight / 2) / 20
+      });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+
+    // Generate aesthetic glowing particles
+    const colors = ["#0F1C38", "#790604", "#B2A18F", "#ffffff"];
+    const generatedDots = Array.from({ length: 50 }).map((_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 3 + 1.5, // 1.5px to 4.5px
+      color: colors[Math.floor(Math.random() * colors.length)],
+      velocity: (Math.random() > 0.5 ? 1 : -1) * (Math.random() * 2 + 0.5),
+      duration: Math.random() * 4 + 2, // 2s to 6s pulsing
+    }));
+    setDots(generatedDots);
+
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -49,10 +79,35 @@ export default function Dashboard() {
         {/* Aesthetic Hero Header */}
         <motion.div variants={item} className="relative flex flex-col md:flex-row md:items-end justify-between border-b border-white/5 pb-12 gap-8 pt-4">
           
-          {/* Ambient Background Orbs */}
-          <div className="absolute -top-20 -left-20 w-[400px] h-[400px] bg-[#0F1C38] rounded-full mix-blend-screen filter blur-[100px] opacity-80 z-0 pointer-events-none"></div>
-          <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-[#790604] rounded-full mix-blend-screen filter blur-[120px] opacity-30 z-0 pointer-events-none"></div>
-          <div className="absolute -bottom-20 left-1/2 w-[250px] h-[250px] bg-[#B2A18F] rounded-full mix-blend-screen filter blur-[100px] opacity-10 z-0 pointer-events-none"></div>
+          {/* Interactive Glowing Particles */}
+          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none rounded-2xl opacity-80">
+            {dots.map((dot) => (
+              <motion.div
+                key={dot.id}
+                animate={{
+                  x: mousePosition.x * dot.velocity * 4,
+                  y: mousePosition.y * dot.velocity * 4,
+                  scale: [1, 1.5, 1],
+                  opacity: [0.2, 0.9, 0.2],
+                }}
+                transition={{
+                  x: { type: "spring", damping: 30, stiffness: 50 },
+                  y: { type: "spring", damping: 30, stiffness: 50 },
+                  scale: { repeat: Infinity, duration: dot.duration, ease: "easeInOut" },
+                  opacity: { repeat: Infinity, duration: dot.duration, ease: "easeInOut" },
+                }}
+                className="absolute rounded-full"
+                style={{
+                  left: `${dot.x}%`,
+                  top: `${dot.y}%`,
+                  width: dot.size,
+                  height: dot.size,
+                  backgroundColor: dot.color,
+                  boxShadow: `0 0 ${dot.size * 4}px ${dot.color}`,
+                }}
+              />
+            ))}
+          </div>
 
           <div className="relative z-10 max-w-2xl">
             <div className="flex items-center gap-3 mb-6 text-[#B2A18F] bg-[#0F1C38]/40 border border-[#B2A18F]/20 px-4 py-1.5 rounded-full w-max shadow-[0_0_20px_rgba(15,28,56,0.6)] backdrop-blur-md">
