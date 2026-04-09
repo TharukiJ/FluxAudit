@@ -49,7 +49,7 @@ export default function ActionPlan({ actions }: { actions: ActionItem[] }) {
               transition={{ delay: i * 0.15 + 0.6 }}
               onClick={() => toggleAction(action.id)}
               className={`
-                group cursor-pointer p-3 sm:p-4 rounded-2xl border transition-all duration-300 flex items-center justify-between gap-3
+                group cursor-pointer p-3 sm:p-4 rounded-2xl border transition-all duration-300 flex items-start justify-between gap-3
                 ${
                   isDone
                     ? "bg-emerald-500/10 border-emerald-500/20"
@@ -57,10 +57,10 @@ export default function ActionPlan({ actions }: { actions: ActionItem[] }) {
                 }
               `}
             >
-              <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
+              <div className="flex items-start gap-3 sm:gap-4 min-w-0 flex-1">
                 <div
                   className={`
-                    shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full border flex items-center justify-center transition-colors
+                    mt-0.5 shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full border flex items-center justify-center transition-colors
                     ${
                       isDone
                         ? "bg-emerald-500 border-emerald-500 text-black"
