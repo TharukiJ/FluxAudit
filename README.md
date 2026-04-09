@@ -26,3 +26,14 @@ In the modern digital landscape, businesses lose significant revenue due to "inv
 I have intentionally designed this version as a **Manual Audit** tool. By manually analyzing data points—checking Bio links, response times, and content quality—the marketer gains a deep, "human-first" understanding of consumer psychology and brand positioning that automated tools often miss.
 
 **Roadmap:** While the current focus is on manual expertise, I plan to integrate **Python** and **AI** logic in future iterations. This will allow users to input a URL and receive an automated audit by scraping social signals and website metadata to generate scores instantly.
+## Installation
+
+```bash
+# Clone the repository
+git clone [https://github.com/your-username/flux-audit.git](https://github.com/your-username/flux-audit.git)
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
