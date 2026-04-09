@@ -42,6 +42,12 @@ body {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500;
   }
   
+  @keyframes shimmer {
+    100% {
+      transform: translateX(300%) skewX(-12deg);
+    }
+  }
+  
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
