@@ -123,7 +123,7 @@ export default function PostMockup({ data }: { data: PostMockupData }) {
 
             {/* Fake High Quality Content */}
             <div className="w-full h-full rounded-[20px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#0F1C38] via-black to-black overflow-hidden relative">
-              <div className="absolute inset-0 opacity-30 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay mix-blend-color-dodge"></div>
+              <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.2)_1px,_transparent_1px)] bg-[size:8px_8px] mix-blend-overlay mix-blend-color-dodge"></div>
               
               <div className="flex flex-col items-center justify-center h-full px-4 relative z-10 w-full">
                 {/* The Hook overlay */}
