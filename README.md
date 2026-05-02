@@ -1,6 +1,6 @@
 # FluxAudit | Marketing Intelligence Dashboard
 FluxAudit is a high-fidelity diagnostic dashboard designed to transform subjective marketing observations into objective business intelligence. Built with a sophisticated Glassmorphism aesthetic, it bridges the gap between technical frontend engineering and strategic marketing psychology.
-___________________________________________________________
+
 ## Project Overview
 In the modern digital landscape, businesses lose significant revenue due to "invisible" marketing gaps. FluxAudit allows developers and marketers to perform high-fidelity manual audits of a brand's digital presence, presenting findings in a sleek interface that shifts the conversation from a service pitch to an investment opportunity.
 
