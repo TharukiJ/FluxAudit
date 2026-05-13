@@ -19,7 +19,7 @@ In the modern digital landscape, businesses lose significant revenue due to "inv
 * **Framework:** SvelteKit 5
 * **Language:** TypeScript
 * **Styling:** Tailwind CSS 
-* **Animations:** GSAP (Antigravity effects)
+* **Animations:** GSAP 
 * **Icons:** Lucide-Svelte
 
 ## Developer Strategy & Future Roadmap
